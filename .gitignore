@@ -1,0 +1,7 @@
+# Original references and design previews
+/image.png
+/photo_*.jpg
+/website-mockup*.png
+
+/.vercel/
+.DS_Store
