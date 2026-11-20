@@ -95,7 +95,7 @@ let framePending = false;
 
 function updateScrollState() {
   framePending = false;
-  const offset = header.offsetHeight + 32;
+  const offset = compactLayout.matches ? 32 : header.offsetHeight + 32;
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
   const section = landmarks.findLast(landmark => landmark.getBoundingClientRect().top <= offset);
   const navLink = navLinks.find(link => link.hash === `#${section?.id}`);
@@ -176,7 +176,11 @@ document.addEventListener("click", (event) => {
   service.value = serviceLink.dataset.service;
   service.setCustomValidity("");
   clearResult();
-  service.focus({ preventScroll: true });
+  if (event.detail === 0) {
+    const heading = document.querySelector("#contact-title");
+    heading.tabIndex = -1;
+    heading.focus({ preventScroll: true });
+  }
 });
 
 form.addEventListener("input", (event) => {

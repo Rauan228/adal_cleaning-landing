@@ -601,7 +601,11 @@ h3 {
 }
 
 @media (max-width: 1040px) {
-  :root { scroll-padding-top: 82px; }
+  :root { scroll-padding-top: 16px; }
+
+  /* Scroll with the page on touch layouts so iOS browser chrome can't pin
+     the site header over an anchor destination or form field. */
+  .top { position: relative; }
 
   .top-inner { min-height: 66px; gap: 14px; }
   .logo img { height: 37px; }
