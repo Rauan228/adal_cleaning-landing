@@ -91,7 +91,34 @@
   .contact .branch { padding: 10px; }
 }
 
-.adal_cleaning .card img[src$="service-renovation.webp"] { object-position: 50% 17%; }
-.adal_cleaning .card img[src$="service-wet.webp"] { object-position: 50% 88%; }
-.adal_cleaning .card img[src$="service-move.webp"] { object-position: 50% 56%; }
-.adal_cleaning .card img[src$="service-upholstery.webp"] { object-position: 50% 63%; }
+/* Preserve the headscarf, branding and cleaning equipment in each service photo. */
+.adal_cleaning #services .card img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 3 / 2;
+  object-position: center;
+}
+
+.final-price-note {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(245 249 233 / .28);
+}
+.final-price-note p { color: #f3f7ec; font-weight: 650; }
+.final-price-note > div { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.final-price-note a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  color: #d6ee91;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 650px) {
+  .final-price-note { margin-top: 7px; }
+}

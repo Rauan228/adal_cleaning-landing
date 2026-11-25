@@ -170,7 +170,7 @@ const labels = isKazakh ? {
   item: "Химиялық тазалау түрі",
   quantity: "Саны",
   unit: "дана",
-  estimate: "Алдын ала құны",
+  estimate: "Баға тізімі бойынша болжамды құн",
   from: value => `${value} бастап`,
   upTo: value => `${value} дейін`,
 } : {
@@ -185,7 +185,7 @@ const labels = isKazakh ? {
   item: "Позиция химчистки",
   quantity: "Количество",
   unit: "шт.",
-  estimate: "Предварительная стоимость",
+  estimate: "Примерная стоимость по прайсу",
   from: value => `от ${value}`,
   upTo: value => `до ${value}`,
 };
