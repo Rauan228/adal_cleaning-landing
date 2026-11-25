@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Возвращаем порядок в квартиру после ремонта или аренды, ухаживаем за полами и мягкой мебелью.">
+  <meta name="description" content="Уборка и химчистка в Астане и Алматы. Прайс, онлайн-расчёт и связь с филиалом в WhatsApp.">
   <meta name="theme-color" content="#faf8ef">
   <title>Adal Cleaning | Клининг для дома</title>
   <link rel="alternate" hreflang="ru" href="index.html">
   <link rel="alternate" hreflang="kk" href="kk.html">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="stylesheet" href="shared/landing.css">
+  <link rel="stylesheet" href="shared/pricing.css">
   <script src="shared/landing.js" defer></script>
 </head>
 <body class="adal_cleaning" id="top" data-brand="Adal Cleaning">
@@ -27,8 +28,8 @@
       </button>
       <nav class="nav" id="site-nav" aria-label="Главное меню">
         <a href="#services">Услуги</a>
+        <a href="#prices">Цены</a>
         <a href="#details">Что входит</a>
-        <a href="#process">Как заказать</a>
         <a href="#faq">Вопросы</a>
         <a class="mobile-menu-cta" href="#contact">Оставить заявку</a>
       </nav>
@@ -40,11 +41,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <p class="kicker">Клининг для дома</p>
-          <h1 id="hero-title">Чистый дом.<br> <span>Больше времени<br> для себя.</span></h1>
-          <p class="description">Возвращаем порядок в квартиру после ремонта или аренды, ухаживаем за полами и мягкой мебелью.</p>
+          <p class="kicker">Клининг в Астане и Алматы</p>
+          <h1 id="hero-title">Проведите своё время <span>с пользой.</span></h1>
+          <p class="description">Время идёт очень быстро. Его невозможно остановить или замедлить. Проведите своё время с пользой, а заботу об уборке дома мы возьмём на себя.</p>
+          <p class="hero-signature">С уважением, Adal Cleaning.</p>
           <div class="hero-cta">
             <a class="button" href="#contact">Рассчитать стоимость</a>
+            <a class="hero-link" href="#prices">Посмотреть цены</a>
           </div>
         </div>
         <img src="assets/hero.webp" alt="Клинер за работой в квартире" class="hero-photo" fetchpriority="high">
@@ -69,7 +72,8 @@
             <div class="card-body">
               <h3>Генеральная уборка</h3>
               <p>Тщательная уборка кухни, санузла и комнат с вниманием к углам и труднодоступным зонам.</p>
-              <a class="service-link" href="#contact" data-service="Генеральная уборка">Выбрать услугу<span class="sr-only"> · Генеральная уборка</span></a>
+              <p class="price">700 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="general">Выбрать услугу<span class="sr-only"> · Генеральная уборка</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -77,7 +81,8 @@
             <div class="card-body">
               <h3>Уборка после ремонта</h3>
               <p>Убираем строительную пыль и приводим поверхности в порядок перед заселением.</p>
-              <a class="service-link" href="#contact" data-service="Уборка после ремонта">Выбрать услугу<span class="sr-only"> · Уборка после ремонта</span></a>
+              <p class="price">1 000 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="renovation">Выбрать услугу<span class="sr-only"> · Уборка после ремонта</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -85,7 +90,8 @@
             <div class="card-body">
               <h3>Влажная уборка</h3>
               <p>Моем полы и протираем доступные поверхности, чтобы освежить квартиру.</p>
-              <a class="service-link" href="#contact" data-service="Влажная уборка">Выбрать услугу<span class="sr-only"> · Влажная уборка</span></a>
+              <p class="price">400 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="wet">Выбрать услугу<span class="sr-only"> · Влажная уборка</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -93,7 +99,8 @@
             <div class="card-body">
               <h3>Уборка после квартирантов</h3>
               <p>Готовим квартиру к показу или заселению после выезда жильцов.</p>
-              <a class="service-link" href="#contact" data-service="Уборка после квартирантов">Выбрать услугу<span class="sr-only"> · Уборка после квартирантов</span></a>
+              <p class="price">По расчёту</p>
+              <a class="service-link" href="#contact" data-service="tenants">Выбрать услугу<span class="sr-only"> · Уборка после квартирантов</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -101,22 +108,80 @@
             <div class="card-body">
               <h3>Химчистка</h3>
               <p>Очищаем мягкую мебель с учётом типа ткани и степени загрязнения.</p>
-              <a class="service-link" href="#contact" data-service="Химчистка">Выбрать услугу<span class="sr-only"> · Химчистка</span></a>
+              <p class="price">По прайсу за предмет</p>
+              <a class="service-link" href="#contact" data-service="dry">Выбрать услугу<span class="sr-only"> · Химчистка</span></a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+    <section class="pad pricing" id="prices" aria-labelledby="prices-title">
+      <div class="wrap">
+        <div class="section-title" data-reveal>
+          <h2 id="prices-title">Прайс на уборку</h2>
+          <p class="aside">Выберите тариф для предварительного расчёта. Итоговую стоимость подтвердит ваш филиал с учётом состояния объекта и дополнительных работ.</p>
+        </div>
+        <div class="tariffs" data-reveal>
+          <a class="tariff" href="#contact" data-service="wet"><span>Влажная уборка<small>Минимальный заказ 22 000 ₸</small></span><strong>400 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="general"><span>Генеральная уборка<small>Минимальный заказ 35 000 ₸</small></span><strong>700 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="general-heavy"><span>Генеральная при сильном загрязнении<small>Минимальный заказ 35 000 ₸</small></span><strong>800 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="general-full"><span>Полная генеральная уборка</span><strong>1 300–1 400 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="renovation"><span>Уборка после ремонта<small>Минимальный заказ 50 000 ₸</small></span><strong>1 000 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="renovation-heavy"><span>Уборка после ремонта при сильном загрязнении<small>Минимальный заказ 50 000 ₸</small></span><strong>1 100 ₸ / м²</strong><span class="sr-only"> · Рассчитать</span></a>
+          <a class="tariff" href="#contact" data-service="tenants"><span>Уборка после квартирантов</span><strong>По расчёту</strong><span class="sr-only"> · Рассчитать</span></a>
+        </div>
+        <p class="tariff-note">В полной генеральной уборке складывание вещей оплачивается отдельно.</p>
+        <div class="price-details" data-reveal>
+          <details>
+            <summary>Прайс на химчистку</summary>
+            <dl>
+            <div><dt>Стулья</dt><dd>1 000–3 000 ₸</dd></div>
+            <div><dt>Кресло</dt><dd>5 000–10 000 ₸</dd></div>
+            <div><dt>Диван</dt><dd>от 10 000 ₸</dd></div>
+            <div><dt>Подушки</dt><dd>500–800 ₸</dd></div>
+            <div><dt>Детский матрас</dt><dd>до 5 000 ₸</dd></div>
+            <div><dt>Матрас 1,5 м</dt><dd>8 000–10 000 ₸</dd></div>
+            <div><dt>Двуспальный матрас</dt><dd>10 000–18 000 ₸</dd></div>
+            <div><dt>Изголовье кровати</dt><dd>4 000–8 000 ₸</dd></div>
+            <div><dt>Кровать</dt><dd>5 000–9 000 ₸</dd></div>
+            <div><dt>Пуфик</dt><dd>2 000–6 000 ₸</dd></div>
+            <div><dt>Ковролин и ковровые покрытия</dt><dd>1 000 ₸ / м²</dd></div>
+            </dl>
+            <p>Цена зависит от размера и степени загрязнения.</p>
+            <a class="service-link" href="#contact" data-service="dry">Рассчитать химчистку</a>
+          </details>
+          <details>
+            <summary>Дополнительные услуги и выезд</summary>
+            <dl>
+            <div><dt>Кухонный гарнитур изнутри</dt><dd>3 000 ₸ / пог. м</dd></div>
+            <div><dt>Шкафы изнутри</dt><dd>1 500 ₸ / пог. м</dd></div>
+            <div><dt>Холодильник</dt><dd>3 000 ₸</dd></div>
+            <div><dt>Холодильник с морозильной камерой</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Двухкамерный холодильник</dt><dd>7 000 ₸</dd></div>
+            <div><dt>Посудомоечная машина</dt><dd>3 000 ₸</dd></div>
+            <div><dt>Духовка</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Кондиционер</dt><dd>2 000 ₸</dd></div>
+            <div><dt>Стирка тюля со снятием и навешиванием</dt><dd>2 000 ₸ / окно</dd></div>
+            <div><dt>Стирка тюля и штор со снятием и навешиванием</dt><dd>5 000 ₸ / окно</dd></div>
+            <div><dt>Глажка</dt><dd>1 500 ₸ / 30 мин</dd></div>
+            <div><dt>Стиральная машина</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Балкон при уборке после ремонта</dt><dd>5 000–10 000 ₸</dd></div>
+            <div><dt>Выезд за город</dt><dd>от 5 000 ₸</dd></div>
+            </dl>
+            <p>Стоимость выезда за город зависит от расстояния.</p>
+          </details>
         </div>
       </div>
     </section>
     <section class="pad secondary " id="details" aria-labelledby="details-title">
       <div class="wrap split" data-reveal>
         <div class="secondary-copy">
-          <h2 id="details-title">Квартира к заселению</h2>
-          <p class="intro">Готовитесь переехать или ждёте новых жильцов? Обсудим состояние квартиры и подберём уборку под задачу.</p>
-          <ul class="rows" role="list">
-            <li>После ремонта — убрать строительную пыль</li>
-            <li>После квартирантов — привести в порядок кухню, ванную и комнаты</li>
-            <li>Для мебели — отдельно рассчитать химчистку</li>
-          </ul>
+          <h2 id="details-title">Что входит в уборку</h2>
+          <div class="price-details scope-details">
+            <details><summary>Влажная уборка</summary><p>Протираем открытые поверхности и фасады, пылесосим ковры и коврики, моем полы, плинтусы и сантехнику, выносим бытовой мусор.</p></details>
+            <details><summary>Генеральная уборка</summary><p>Убираем пыль со стен, потолков, радиаторов и люстр, моем окна снаружи по сезону и чистим шторы паром. Моем полы и плинтусы, убираем за подвижной мебелью, чистим кухонные фасады, вытяжку и санузлы. Мытьё шкафов, холодильника и духовки изнутри оплачивается отдельно.</p></details>
+            <details><summary>Уборка после ремонта</summary><p>Убираем строительную пыль со всех доступных поверхностей, моем окна, рамы и подоконники, снимаем плёнку и наклейки. Чистим радиаторы и сантехнику, моем полы и удаляем следы цемента и краски там, где это возможно.</p></details>
+          </div>
         </div>
         <img src="assets/detail.webp" alt="Профессиональная уборка в квартире" class="photobox" loading="lazy" decoding="async">
       </div>
@@ -172,24 +237,69 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div data-reveal>
-          <h2 id="contact-title">Подберём уборку для вашего дома</h2>
-          <p>Расскажите о квартире и выберите услугу. Согласуем объём работ и рассчитаем стоимость.</p>
+          <h2 id="contact-title">Рассчитайте стоимость уборки</h2>
+          <p>Выберите услугу и укажите площадь или количество предметов. Когда будете готовы, отправьте заявку в WhatsApp нужного филиала.</p>
+          <div class="branch-list" aria-label="Контакты филиалов">
+            <div class="branch">
+              <h3>Астана</h3>
+              <a href="tel:+77715286322">+7 771 528 63 22</a>
+              <a href="https://wa.me/77715286322" aria-label="Написать в WhatsApp · Астана">WhatsApp</a>
+            </div>
+            <div class="branch">
+              <h3>Алматы</h3>
+              <a href="tel:+77025399402">+7 702 539 94 02</a>
+              <a href="https://wa.me/77025399402" aria-label="Написать в WhatsApp · Алматы">WhatsApp</a>
+            </div>
+          </div>
         </div>
         <form id="quote-form" data-reveal>
-          <h3 class="full">Заявка на расчёт</h3>
-          <p class="form-hint full">Подготовьте текст заявки, чтобы отправить его в удобном мессенджере.</p>
+          <h3 class="full">Калькулятор и заявка</h3>
           <label class="full" for="service">Вид уборки
             <select id="service" name="service" required>
               <option value="">Выберите услугу</option>
-              <option>Генеральная уборка</option>
-              <option>Уборка после ремонта</option>
-              <option>Влажная уборка</option>
-              <option>Уборка после квартирантов</option>
-              <option>Химчистка</option>
+              <option value="wet" data-low="400" data-high="400" data-minimum="22000">Влажная уборка</option>
+              <option value="general" data-low="700" data-high="700" data-minimum="35000">Генеральная уборка</option>
+              <option value="general-heavy" data-low="800" data-high="800" data-minimum="35000">Генеральная при сильном загрязнении</option>
+              <option value="general-full" data-low="1300" data-high="1400" data-minimum="0">Полная генеральная уборка</option>
+              <option value="renovation" data-low="1000" data-high="1000" data-minimum="50000">Уборка после ремонта</option>
+              <option value="renovation-heavy" data-low="1100" data-high="1100" data-minimum="50000">Уборка после ремонта при сильном загрязнении</option>
+              <option value="tenants" data-low="0" data-high="0" data-minimum="0">Уборка после квартирантов</option>
+              <option value="dry" data-low="0" data-high="0" data-minimum="0">Химчистка</option>
             </select>
           </label>
-          <label for="area">Площадь, м²
-            <input id="area" name="area" type="number" min="1" step="any" inputmode="decimal" placeholder="Например, 65">
+          <label class="full" for="item" id="item-field" hidden>Мебель или покрытие
+            <select id="item" name="item" disabled>
+              <option value="">Выберите позицию</option>
+              <option value="1" data-low="1000" data-high="3000" data-area="false">Стулья</option>
+              <option value="2" data-low="5000" data-high="10000" data-area="false">Кресло</option>
+              <option value="3" data-low="10000" data-high="0" data-area="false">Диван</option>
+              <option value="4" data-low="500" data-high="800" data-area="false">Подушки</option>
+              <option value="5" data-low="0" data-high="5000" data-area="false">Детский матрас</option>
+              <option value="6" data-low="8000" data-high="10000" data-area="false">Матрас 1,5 м</option>
+              <option value="7" data-low="10000" data-high="18000" data-area="false">Двуспальный матрас</option>
+              <option value="8" data-low="4000" data-high="8000" data-area="false">Изголовье кровати</option>
+              <option value="9" data-low="5000" data-high="9000" data-area="false">Кровать</option>
+              <option value="10" data-low="2000" data-high="6000" data-area="false">Пуфик</option>
+              <option value="11" data-low="1000" data-high="1000" data-area="true">Ковролин и ковровые покрытия</option>
+            </select>
+          </label>
+          <label for="area" id="area-field">Площадь, м²
+            <input id="area" name="area" type="number" min="0.1" step="any" inputmode="decimal" placeholder="Например, 65">
+          </label>
+          <label for="quantity" id="quantity-field" hidden>Количество, шт.
+            <input id="quantity" name="quantity" type="number" min="1" step="1" inputmode="numeric" value="1" disabled>
+          </label>
+          <div class="estimate full">
+            <span>Предварительная стоимость</span>
+            <output id="estimate" for="service area item quantity" aria-live="polite">Выберите услугу</output>
+            <small id="estimate-note"></small>
+          </div>
+          <label for="city">Город для заявки
+            <select id="city" name="city" required>
+              <option value="">Выберите город</option>
+              <option value="astana" data-whatsapp="77715286322">Астана</option>
+              <option value="almaty" data-whatsapp="77025399402">Алматы</option>
+            </select>
           </label>
           <label for="phone">Номер телефона
             <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 (___) ___-__-__" required>
@@ -197,7 +307,7 @@
           <label class="full" for="notes">Что важно учесть <span>по желанию</span>
             <textarea id="notes" name="notes" rows="2" maxlength="500" placeholder="Например, нужно почистить угловой диван"></textarea>
           </label>
-          <button class="button full" type="submit" disabled>Подготовить заявку</button>
+          <button class="button full" type="submit" disabled>Подготовить заявку для WhatsApp</button>
           <noscript class="full"><p class="form-hint">Включите JavaScript, чтобы подготовить текст заявки.</p></noscript>
           <div class="form-result full" id="quote-result" hidden>
             <p class="result-status" id="quote-status" role="status"></p>
@@ -205,7 +315,7 @@
             <textarea id="quote-message" rows="5" readonly></textarea>
             <div class="result-actions">
               <button class="button button-outline" id="quote-copy" type="button">Скопировать</button>
-              <button class="button" id="quote-share" type="button" hidden>Поделиться</button>
+              <a class="button" id="quote-whatsapp" target="_blank" rel="noopener noreferrer">Открыть WhatsApp</a>
             </div>
           </div>
         </form>
@@ -215,10 +325,11 @@
   <footer class="foot">
     <div class="wrap">
       <a class="logo" href="#top" aria-label="Adal Cleaning — в начало"><img src="assets/logo.png" alt="" decoding="async"></a>
-      <span>Клининговая компания</span>
+      <span>Астана и Алматы</span>
       <nav aria-label="Подвал">
         <a href="#services">Услуги</a>
-        <a href="#contact">Оставить заявку</a>
+        <a href="#prices">Цены</a>
+        <a href="#contact">Филиалы</a>
       </nav>
     </div>
   </footer>

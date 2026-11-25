@@ -11,36 +11,30 @@ const copy = isKazakh ? {
   phoneFormat: "Телефон нөмірін кодымен бірге жазыңыз, 10–15 цифр.",
   phoneRequired: "Телефон нөмірін енгізіңіз.",
   serviceRequired: "Тазалау қызметін таңдаңыз.",
-  areaFormat: "Ауданын санмен көрсетіңіз (кемінде 1 м²).",
+  areaFormat: "Ауданын көрсетіңіз (кемінде 0,1 м²).",
   greeting: brand => `Сәлеметсіз бе! ${brand} компаниясынан тазалау қызметінің құнын білгім келеді.`,
   serviceLabel: "Қызмет",
   areaLabel: "Ауданы",
   notesLabel: "Түсініктеме",
   phoneLabel: "Байланыс нөмірі",
-  ready: "Өтінім дайын. Мәтінді көшіріңіз немесе бөлісіңіз.",
+  ready: "Өтінім дайын. Таңдалған филиалға жіберу үшін WhatsApp ашыңыз.",
   copied: "Өтінім мәтіні көшірілді.",
   selected: "Мәтін белгіленді. Оны құрылғы мәзірі арқылы көшіріңіз.",
-  shareTitle: "Тазалауға өтінім",
-  shared: "Мәтін бөлісу мәзіріне берілді.",
-  shareFallback: "Өтінімді жіберу үшін мәтінді көшіріңіз.",
 } : {
   menuOpen: "Открыть меню",
   menuClose: "Закрыть меню",
   phoneFormat: "Введите номер телефона с кодом, от 10 до 15 цифр.",
   phoneRequired: "Введите номер телефона.",
   serviceRequired: "Выберите услугу.",
-  areaFormat: "Укажите площадь числом (от 1 м²).",
+  areaFormat: "Укажите площадь числом (от 0,1 м²).",
   greeting: brand => `Здравствуйте! Хочу узнать стоимость уборки в ${brand}.`,
   serviceLabel: "Услуга",
   areaLabel: "Площадь",
   notesLabel: "Комментарий",
   phoneLabel: "Номер для связи",
-  ready: "Заявка подготовлена. Скопируйте текст или поделитесь им.",
+  ready: "Заявка готова. Откройте WhatsApp, чтобы отправить её выбранному филиалу.",
   copied: "Текст заявки скопирован.",
   selected: "Текст выделен. Скопируйте его через меню устройства.",
-  shareTitle: "Заявка на уборку",
-  shared: "Текст передан в меню отправки.",
-  shareFallback: "Скопируйте текст, чтобы отправить заявку.",
 };
 
 function setMenu(open) {
@@ -88,7 +82,7 @@ header.addEventListener("click", (event) => {
 
 const progressBar = header.querySelector(".scroll-progress");
 const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
-const landmarks = [...document.querySelectorAll('main section[id]')];
+const landmarks = [...document.querySelectorAll('main section[id]')].reverse();
 let currentNavLink;
 let currentSection;
 let framePending = false;
@@ -97,7 +91,7 @@ function updateScrollState() {
   framePending = false;
   const offset = compactLayout.matches ? 32 : header.offsetHeight + 32;
   const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const section = landmarks.findLast(landmark => landmark.getBoundingClientRect().top <= offset);
+  const section = landmarks.find(landmark => landmark.getBoundingClientRect().top <= offset);
   const navLink = navLinks.find(link => link.hash === `#${section?.id}`);
 
   currentSection = section;
@@ -154,13 +148,104 @@ const result = document.querySelector("#quote-result");
 const status = document.querySelector("#quote-status");
 const message = document.querySelector("#quote-message");
 const copyButton = document.querySelector("#quote-copy");
-const shareButton = document.querySelector("#quote-share");
+const city = document.querySelector("#city");
+const item = document.querySelector("#item");
+const quantity = document.querySelector("#quantity");
+const estimate = document.querySelector("#estimate");
+const estimateNote = document.querySelector("#estimate-note");
+const whatsappLink = document.querySelector("#quote-whatsapp");
+const areaField = document.querySelector("#area-field");
+const itemField = document.querySelector("#item-field");
+const quantityField = document.querySelector("#quantity-field");
+
+const labels = isKazakh ? {
+  chooseService: "Қызметті таңдаңыз",
+  chooseItem: "Тазаланатын затты таңдаңыз",
+  enterArea: "Ауданын көрсетіңіз",
+  enterQuantity: "Заттар санын көрсетіңіз",
+  individual: "Жеке есептеледі",
+  minimum: "Ең аз тапсырыс сомасы",
+  city: "Қала",
+  cityRequired: "Өтінім үшін қаланы таңдаңыз.",
+  item: "Химиялық тазалау түрі",
+  quantity: "Саны",
+  unit: "дана",
+  estimate: "Алдын ала құны",
+  from: value => `${value} бастап`,
+  upTo: value => `${value} дейін`,
+} : {
+  chooseService: "Выберите услугу",
+  chooseItem: "Выберите предмет химчистки",
+  enterArea: "Укажите площадь",
+  enterQuantity: "Укажите количество предметов",
+  individual: "По индивидуальному расчёту",
+  minimum: "Минимальная сумма заказа",
+  city: "Город",
+  cityRequired: "Выберите город для заявки.",
+  item: "Позиция химчистки",
+  quantity: "Количество",
+  unit: "шт.",
+  estimate: "Предварительная стоимость",
+  from: value => `от ${value}`,
+  upTo: value => `до ${value}`,
+};
+
+const formatter = new Intl.NumberFormat("ru-RU");
+const money = value => `${formatter.format(value)} ₸`;
+
+function setField(field, control, visible) {
+  field.hidden = !visible;
+  control.disabled = !visible;
+  if (!visible) control.setCustomValidity("");
+}
+
+function getEstimate() {
+  const dryCleaning = service.value === "dry";
+  const itemOption = item.selectedOptions[0];
+  const measureArea = !dryCleaning || itemOption.dataset.area === "true";
+  if (!service.value) return { prompt: labels.chooseService, dryCleaning, measureArea };
+  if (dryCleaning && !item.value) return { prompt: labels.chooseItem, dryCleaning, measureArea };
+
+  const rate = (dryCleaning ? itemOption : service.selectedOptions[0]).dataset;
+  const rateMin = Number(rate.low);
+  const rateMax = Number(rate.high);
+  if (!rateMin && !rateMax) return { prompt: labels.individual, dryCleaning, measureArea };
+
+  const input = measureArea ? area : quantity;
+  const amount = input.valueAsNumber;
+  const orderMinimum = Number(rate.minimum || 0);
+  const note = orderMinimum ? `${labels.minimum} — ${money(orderMinimum)}` : "";
+  if (!(amount > 0 && input.validity.valid)) {
+    return { prompt: measureArea ? labels.enterArea : labels.enterQuantity, note, dryCleaning, measureArea };
+  }
+
+  const low = rateMin ? Math.max(orderMinimum, Math.round(rateMin * amount)) : 0;
+  const high = rateMax ? Math.max(orderMinimum, Math.round(rateMax * amount)) : 0;
+  const total = low === high ? money(low)
+    : !low ? labels.upTo(money(high))
+    : !high ? labels.from(money(low))
+    : `${formatter.format(low)}–${money(high)}`;
+  return { total, note, dryCleaning, measureArea };
+}
+
+function updateEstimate() {
+  const dryCleaning = service.value === "dry";
+  const measureArea = !dryCleaning || item.selectedOptions[0].dataset.area === "true";
+  setField(areaField, area, measureArea);
+  setField(itemField, item, dryCleaning);
+  setField(quantityField, quantity, dryCleaning && item.value !== "" && !measureArea);
+  const current = getEstimate();
+  estimate.value = current.total || current.prompt;
+  estimateNote.textContent = current.note || "";
+  return current;
+}
 
 function clearResult() {
   if (result.hidden) return;
   result.hidden = true;
   status.textContent = "";
   message.value = "";
+  whatsappLink.removeAttribute("href");
 }
 
 function validatePhone() {
@@ -176,6 +261,7 @@ document.addEventListener("click", (event) => {
   service.value = serviceLink.dataset.service;
   service.setCustomValidity("");
   clearResult();
+  updateEstimate();
   if (event.detail === 0) {
     const heading = document.querySelector("#contact-title");
     heading.tabIndex = -1;
@@ -187,11 +273,13 @@ form.addEventListener("input", (event) => {
   event.target.setCustomValidity?.("");
   if (event.target === phone) validatePhone();
   clearResult();
+  if ([service, item, area, quantity].includes(event.target)) updateEstimate();
 });
 
 form.addEventListener("invalid", (event) => {
   const field = event.target;
   if (field === service) field.setCustomValidity(copy.serviceRequired);
+  if (field === city) field.setCustomValidity(labels.cityRequired);
   if (field === phone && field.validity.valueMissing) field.setCustomValidity(copy.phoneRequired);
   if (field === area) field.setCustomValidity(copy.areaFormat);
 }, true);
@@ -201,16 +289,23 @@ form.addEventListener("submit", (event) => {
   validatePhone();
   if (!form.reportValidity()) return;
 
+  const branch = city.selectedOptions[0];
+  const calculation = updateEstimate();
   const lines = [
     copy.greeting(document.body.dataset.brand),
-    `${copy.serviceLabel}: ${service.value}`,
+    `${labels.city}: ${branch.label}`,
+    `${copy.serviceLabel}: ${service.selectedOptions[0].label}`,
   ];
 
-  if (area.value) lines.push(`${copy.areaLabel}: ${area.value} м²`);
+  if (calculation.dryCleaning && item.value) lines.push(`${labels.item}: ${item.selectedOptions[0].label}`);
+  if (!area.disabled && area.value) lines.push(`${copy.areaLabel}: ${area.value} м²`);
+  if (!quantity.disabled && quantity.value) lines.push(`${labels.quantity}: ${quantity.value} ${labels.unit}`);
+  if (calculation.total) lines.push(`${labels.estimate}: ${calculation.total}`);
   if (notes.value.trim()) lines.push(`${copy.notesLabel}: ${notes.value.trim()}`);
   lines.push(`${copy.phoneLabel}: ${phone.value.trim()}`);
 
   message.value = lines.join("\n");
+  whatsappLink.href = `https://wa.me/${branch.dataset.whatsapp}?text=${encodeURIComponent(message.value)}`;
   result.hidden = false;
   status.textContent = copy.ready;
   message.focus({ preventScroll: true });
@@ -233,16 +328,5 @@ copyButton.addEventListener("click", async () => {
   }
 });
 
-if (typeof navigator.share === "function") {
-  shareButton.hidden = false;
-  shareButton.addEventListener("click", async () => {
-    try {
-      await navigator.share({ title: copy.shareTitle, text: message.value });
-      status.textContent = copy.shared;
-    } catch (error) {
-      if (error.name !== "AbortError") status.textContent = copy.shareFallback;
-    }
-  });
-}
-
+updateEstimate();
 form.querySelector("button[type='submit']").disabled = false;

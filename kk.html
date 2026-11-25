@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Жөндеуден немесе жалға беруден кейін пәтерді ретке келтіреміз, еден мен жұмсақ жиһазды тазалаймыз.">
+  <meta name="description" content="Астана мен Алматыдағы тазалау және химиялық тазалау. Бағалар, онлайн есептеу және филиалдың WhatsApp нөмірі.">
   <meta name="theme-color" content="#faf8ef">
   <title>Adal Cleaning | Үй тазалау қызметі</title>
   <link rel="alternate" hreflang="ru" href="index.html">
   <link rel="alternate" hreflang="kk" href="kk.html">
   <link rel="icon" href="assets/logo.png" type="image/png">
   <link rel="stylesheet" href="shared/landing.css">
+  <link rel="stylesheet" href="shared/pricing.css">
   <script src="shared/landing.js" defer></script>
 </head>
 <body class="adal_cleaning" id="top" data-brand="Adal Cleaning">
@@ -27,8 +28,8 @@
       </button>
       <nav class="nav" id="site-nav" aria-label="Басты мәзір">
         <a href="#services">Қызметтер</a>
+        <a href="#prices">Бағалар</a>
         <a href="#details">Қызметке не кіреді</a>
-        <a href="#process">Тапсырыс беру</a>
         <a href="#faq">Сұрақтар</a>
         <a class="mobile-menu-cta" href="#contact">Өтінім қалдыру</a>
       </nav>
@@ -40,11 +41,13 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <p class="kicker">Үй тазалау қызметі</p>
-          <h1 id="hero-title">Таза үй.<br> <span>Өзіңізге<br> көбірек уақыт.</span></h1>
-          <p class="description">Жөндеуден немесе жалға беруден кейін пәтерді ретке келтіреміз, еден мен жұмсақ жиһазды тазалаймыз.</p>
+          <p class="kicker">Астана мен Алматыдағы клининг</p>
+          <h1 id="hero-title">Уақытыңызды <span>пайдалы өткізіңіз.</span></h1>
+          <p class="description">Уақыт өте жылдам өтеді. Оны тоқтату да, баяулату да мүмкін емес. Уақытыңызды пайдалы өткізіңіз, ал үй тазалығын бізге тапсырыңыз.</p>
+          <p class="hero-signature">Құрметпен, Adal Cleaning.</p>
           <div class="hero-cta">
             <a class="button" href="#contact">Құнын есептеу</a>
+            <a class="hero-link" href="#prices">Бағаларды қарау</a>
           </div>
         </div>
         <img src="assets/hero.webp" alt="Пәтер жинап жүрген клинер" class="hero-photo" fetchpriority="high">
@@ -69,7 +72,8 @@
             <div class="card-body">
               <h3>Күрделі тазалау</h3>
               <p>Асүйді, санитарлық торапты және бөлмелерді мұқият тазалаймыз. Бұрыштар мен қол жетуі қиын жерлерге де көңіл бөлеміз.</p>
-              <a class="service-link" href="#contact" data-service="Күрделі тазалау">Қызметті таңдау<span class="sr-only"> · Күрделі тазалау</span></a>
+              <p class="price">700 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="general">Қызметті таңдау<span class="sr-only"> · Күрделі тазалау</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -77,7 +81,8 @@
             <div class="card-body">
               <h3>Жөндеуден кейінгі тазалау</h3>
               <p>Көшіп кірер алдында құрылыс шаңын кетіріп, беттерді тазалаймыз.</p>
-              <a class="service-link" href="#contact" data-service="Жөндеуден кейінгі тазалау">Қызметті таңдау<span class="sr-only"> · Жөндеуден кейінгі тазалау</span></a>
+              <p class="price">1 000 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="renovation">Қызметті таңдау<span class="sr-only"> · Жөндеуден кейінгі тазалау</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -85,7 +90,8 @@
             <div class="card-body">
               <h3>Ылғалды тазалау</h3>
               <p>Пәтерді сергіту үшін еденді жуып, қолжетімді беттерді сүртеміз.</p>
-              <a class="service-link" href="#contact" data-service="Ылғалды тазалау">Қызметті таңдау<span class="sr-only"> · Ылғалды тазалау</span></a>
+              <p class="price">400 ₸ / м²</p>
+              <a class="service-link" href="#contact" data-service="wet">Қызметті таңдау<span class="sr-only"> · Ылғалды тазалау</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -93,7 +99,8 @@
             <div class="card-body">
               <h3>Жалға алушылардан кейінгі тазалау</h3>
               <p>Тұрғындар көшіп кеткеннен кейін пәтерді көрсетуге немесе жаңа тұрғындарға дайындаймыз.</p>
-              <a class="service-link" href="#contact" data-service="Жалға алушылардан кейінгі тазалау">Қызметті таңдау<span class="sr-only"> · Жалға алушылардан кейінгі тазалау</span></a>
+              <p class="price">Жеке есептеледі</p>
+              <a class="service-link" href="#contact" data-service="tenants">Қызметті таңдау<span class="sr-only"> · Жалға алушылардан кейінгі тазалау</span></a>
             </div>
           </article>
           <article class="card" data-reveal>
@@ -101,22 +108,80 @@
             <div class="card-body">
               <h3>Химиялық тазалау</h3>
               <p>Жұмсақ жиһазды мата түрі мен ластану деңгейіне сай тазалаймыз.</p>
-              <a class="service-link" href="#contact" data-service="Химиялық тазалау">Қызметті таңдау<span class="sr-only"> · Химиялық тазалау</span></a>
+              <p class="price">Зат бойынша, баға тізіміне сай</p>
+              <a class="service-link" href="#contact" data-service="dry">Қызметті таңдау<span class="sr-only"> · Химиялық тазалау</span></a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+    <section class="pad pricing" id="prices" aria-labelledby="prices-title">
+      <div class="wrap">
+        <div class="section-title" data-reveal>
+          <h2 id="prices-title">Тазалау бағалары</h2>
+          <p class="aside">Алдын ала есептеу үшін тарифті таңдаңыз. Соңғы бағаны филиал нысанның жағдайы мен қосымша жұмыстарды ескеріп растайды.</p>
+        </div>
+        <div class="tariffs" data-reveal>
+          <a class="tariff" href="#contact" data-service="wet"><span>Ылғалды тазалау<small>Ең аз тапсырыс 22 000 ₸</small></span><strong>400 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="general"><span>Күрделі тазалау<small>Ең аз тапсырыс 35 000 ₸</small></span><strong>700 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="general-heavy"><span>Қатты ластанған үй-жайды күрделі тазалау<small>Ең аз тапсырыс 35 000 ₸</small></span><strong>800 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="general-full"><span>Толық күрделі тазалау</span><strong>1 300–1 400 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="renovation"><span>Жөндеуден кейінгі тазалау<small>Ең аз тапсырыс 50 000 ₸</small></span><strong>1 000 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="renovation-heavy"><span>Жөндеуден кейінгі тазалау (қатты ластану)<small>Ең аз тапсырыс 50 000 ₸</small></span><strong>1 100 ₸ / м²</strong><span class="sr-only"> · Есептеу</span></a>
+          <a class="tariff" href="#contact" data-service="tenants"><span>Жалға алушылардан кейінгі тазалау</span><strong>Жеке есептеледі</strong><span class="sr-only"> · Есептеу</span></a>
+        </div>
+        <p class="tariff-note">Толық күрделі тазалауда заттарды жинап, бүктеу бөлек төленеді.</p>
+        <div class="price-details" data-reveal>
+          <details>
+            <summary>Химиялық тазалау бағалары</summary>
+            <dl>
+            <div><dt>Орындықтар</dt><dd>1 000–3 000 ₸</dd></div>
+            <div><dt>Кресло</dt><dd>5 000–10 000 ₸</dd></div>
+            <div><dt>Диван</dt><dd>10 000 ₸ бастап</dd></div>
+            <div><dt>Жастықтар</dt><dd>500–800 ₸</dd></div>
+            <div><dt>Балалар матрасы</dt><dd>5 000 ₸ дейін</dd></div>
+            <div><dt>1,5 м матрас</dt><dd>8 000–10 000 ₸</dd></div>
+            <div><dt>Екі кісілік матрас</dt><dd>10 000–18 000 ₸</dd></div>
+            <div><dt>Кереуеттің бас жағы</dt><dd>4 000–8 000 ₸</dd></div>
+            <div><dt>Кереует</dt><dd>5 000–9 000 ₸</dd></div>
+            <div><dt>Пуф</dt><dd>2 000–6 000 ₸</dd></div>
+            <div><dt>Ковролин және кілем жабындары</dt><dd>1 000 ₸ / м²</dd></div>
+            </dl>
+            <p>Баға өлшемі мен ластану деңгейіне байланысты.</p>
+            <a class="service-link" href="#contact" data-service="dry">Химиялық тазалау құнын есептеу</a>
+          </details>
+          <details>
+            <summary>Қосымша қызметтер және жол ақысы</summary>
+            <dl>
+            <div><dt>Асүй гарнитурының ішін жуу</dt><dd>3 000 ₸ / қума м</dd></div>
+            <div><dt>Шкафтардың ішін жуу</dt><dd>1 500 ₸ / қума м</dd></div>
+            <div><dt>Тоңазытқыш</dt><dd>3 000 ₸</dd></div>
+            <div><dt>Мұздатқыш камерасы бар тоңазытқыш</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Екі камералы тоңазытқыш</dt><dd>7 000 ₸</dd></div>
+            <div><dt>Ыдыс жуғыш машина</dt><dd>3 000 ₸</dd></div>
+            <div><dt>Тұмшапеш</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Кондиционер</dt><dd>2 000 ₸</dd></div>
+            <div><dt>Тюльді шешіп, жуып, қайта ілу</dt><dd>2 000 ₸ / терезе</dd></div>
+            <div><dt>Тюль мен пердені шешіп, жуып, қайта ілу</dt><dd>5 000 ₸ / терезе</dd></div>
+            <div><dt>Үтіктеу</dt><dd>1 500 ₸ / 30 мин</dd></div>
+            <div><dt>Кір жуғыш машина</dt><dd>5 000 ₸</dd></div>
+            <div><dt>Жөндеуден кейін балконды тазалау</dt><dd>5 000–10 000 ₸</dd></div>
+            <div><dt>Қала сыртына шығу</dt><dd>5 000 ₸ бастап</dd></div>
+            </dl>
+            <p>Қала сыртына шығу құны қашықтыққа байланысты.</p>
+          </details>
         </div>
       </div>
     </section>
     <section class="pad secondary " id="details" aria-labelledby="details-title">
       <div class="wrap split" data-reveal>
         <div class="secondary-copy">
-          <h2 id="details-title">Пәтерді көшіп кіруге дайындау</h2>
-          <p class="intro">Көшкелі жатырсыз ба, әлде жаңа тұрғындарды күтіп жүрсіз бе? Пәтердің жағдайын талқылап, лайық тазалау түрін ұсынамыз.</p>
-          <ul class="rows" role="list">
-            <li>Жөндеуден кейін — құрылыс шаңын кетіру</li>
-            <li>Жалға алушылардан кейін — асүйді, жуынатын бөлмені және басқа бөлмелерді ретке келтіру</li>
-            <li>Жиһаз үшін — химиялық тазалау құнын бөлек есептеу</li>
-          </ul>
+          <h2 id="details-title">Тазалауға не кіреді?</h2>
+          <div class="price-details scope-details">
+            <details><summary>Ылғалды тазалау</summary><p>Ашық беттер мен жиһаздың алдыңғы бетін сүртеміз, кілемдерді шаңсорғышпен тазалаймыз, еденді, еден жиегін және сантехниканы жуамыз, тұрмыстық қоқысты шығарамыз.</p></details>
+            <details><summary>Күрделі тазалау</summary><p>Қабырға, төбе, радиатор мен люстраның шаңын тазалаймыз, маусымға қарай терезенің сыртын жуамыз, пердені бумен тазалаймыз. Еден мен еден жиегін жуып, жылжымалы жиһаздың артын, асүй жиһазының алдыңғы бетін, сорғыш пен санитарлық торапты тазалаймыз. Шкаф, тоңазытқыш және пештің ішін жуу бөлек төленеді.</p></details>
+            <details><summary>Жөндеуден кейінгі тазалау</summary><p>Қолжетімді беттердегі құрылыс шаңын кетіріп, терезелерді, жақтауларды және терезе алдындағы тақтайларды жуамыз, үлдір мен жапсырмаларды шешеміз. Радиатор мен сантехниканы тазалап, еденді жуамыз, мүмкін болған жерде цемент пен бояу іздерін кетіреміз.</p></details>
+          </div>
         </div>
         <img src="assets/detail.webp" alt="Пәтерді кәсіби тазалау" class="photobox" loading="lazy" decoding="async">
       </div>
@@ -172,24 +237,69 @@
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
         <div data-reveal>
-          <h2 id="contact-title">Үйіңізге сай тазалау түрін ұсынамыз</h2>
-          <p>Пәтер туралы айтып, қызметті таңдаңыз. Жұмыс көлемін келісіп, бағасын есептейміз.</p>
+          <h2 id="contact-title">Тазалау құнын есептеңіз</h2>
+          <p>Қызметті таңдап, ауданын немесе заттар санын көрсетіңіз. Дайын болғанда өтінімді тиісті филиалдың WhatsApp нөміріне жіберіңіз.</p>
+          <div class="branch-list" aria-label="Филиалдардың байланыс нөмірлері">
+            <div class="branch">
+              <h3>Астана</h3>
+              <a href="tel:+77715286322">+7 771 528 63 22</a>
+              <a href="https://wa.me/77715286322" aria-label="WhatsApp арқылы жазу · Астана">WhatsApp</a>
+            </div>
+            <div class="branch">
+              <h3>Алматы</h3>
+              <a href="tel:+77025399402">+7 702 539 94 02</a>
+              <a href="https://wa.me/77025399402" aria-label="WhatsApp арқылы жазу · Алматы">WhatsApp</a>
+            </div>
+          </div>
         </div>
         <form id="quote-form" data-reveal>
-          <h3 class="full">Бағаны есептеуге өтінім</h3>
-          <p class="form-hint full">Өтінім мәтінін дайындап, өзіңізге ыңғайлы мессенджер арқылы жіберіңіз.</p>
+          <h3 class="full">Калькулятор және өтінім</h3>
           <label class="full" for="service">Тазалау түрі
             <select id="service" name="service" required>
               <option value="">Қызметті таңдаңыз</option>
-              <option>Күрделі тазалау</option>
-              <option>Жөндеуден кейінгі тазалау</option>
-              <option>Ылғалды тазалау</option>
-              <option>Жалға алушылардан кейінгі тазалау</option>
-              <option>Химиялық тазалау</option>
+              <option value="wet" data-low="400" data-high="400" data-minimum="22000">Ылғалды тазалау</option>
+              <option value="general" data-low="700" data-high="700" data-minimum="35000">Күрделі тазалау</option>
+              <option value="general-heavy" data-low="800" data-high="800" data-minimum="35000">Қатты ластанған үй-жайды күрделі тазалау</option>
+              <option value="general-full" data-low="1300" data-high="1400" data-minimum="0">Толық күрделі тазалау</option>
+              <option value="renovation" data-low="1000" data-high="1000" data-minimum="50000">Жөндеуден кейінгі тазалау</option>
+              <option value="renovation-heavy" data-low="1100" data-high="1100" data-minimum="50000">Жөндеуден кейінгі тазалау (қатты ластану)</option>
+              <option value="tenants" data-low="0" data-high="0" data-minimum="0">Жалға алушылардан кейінгі тазалау</option>
+              <option value="dry" data-low="0" data-high="0" data-minimum="0">Химиялық тазалау</option>
             </select>
           </label>
-          <label for="area">Ауданы, м²
-            <input id="area" name="area" type="number" min="1" step="any" inputmode="decimal" placeholder="Мысалы, 65">
+          <label class="full" for="item" id="item-field" hidden>Жиһаз немесе жабын
+            <select id="item" name="item" disabled>
+              <option value="">Түрін таңдаңыз</option>
+              <option value="1" data-low="1000" data-high="3000" data-area="false">Орындықтар</option>
+              <option value="2" data-low="5000" data-high="10000" data-area="false">Кресло</option>
+              <option value="3" data-low="10000" data-high="0" data-area="false">Диван</option>
+              <option value="4" data-low="500" data-high="800" data-area="false">Жастықтар</option>
+              <option value="5" data-low="0" data-high="5000" data-area="false">Балалар матрасы</option>
+              <option value="6" data-low="8000" data-high="10000" data-area="false">1,5 м матрас</option>
+              <option value="7" data-low="10000" data-high="18000" data-area="false">Екі кісілік матрас</option>
+              <option value="8" data-low="4000" data-high="8000" data-area="false">Кереуеттің бас жағы</option>
+              <option value="9" data-low="5000" data-high="9000" data-area="false">Кереует</option>
+              <option value="10" data-low="2000" data-high="6000" data-area="false">Пуф</option>
+              <option value="11" data-low="1000" data-high="1000" data-area="true">Ковролин және кілем жабындары</option>
+            </select>
+          </label>
+          <label for="area" id="area-field">Ауданы, м²
+            <input id="area" name="area" type="number" min="0.1" step="any" inputmode="decimal" placeholder="Мысалы, 65">
+          </label>
+          <label for="quantity" id="quantity-field" hidden>Саны, дана
+            <input id="quantity" name="quantity" type="number" min="1" step="1" inputmode="numeric" value="1" disabled>
+          </label>
+          <div class="estimate full">
+            <span>Алдын ала құны</span>
+            <output id="estimate" for="service area item quantity" aria-live="polite">Қызметті таңдаңыз</output>
+            <small id="estimate-note"></small>
+          </div>
+          <label for="city">Өтінім қаласы
+            <select id="city" name="city" required>
+              <option value="">Қаланы таңдаңыз</option>
+              <option value="astana" data-whatsapp="77715286322">Астана</option>
+              <option value="almaty" data-whatsapp="77025399402">Алматы</option>
+            </select>
           </label>
           <label for="phone">Телефон нөмірі
             <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+7 (___) ___-__-__" required>
@@ -197,7 +307,7 @@
           <label class="full" for="notes">Нені ескеру керек <span>міндетті емес</span>
             <textarea id="notes" name="notes" rows="2" maxlength="500" placeholder="Мысалы, бұрыштық диванды тазалау керек"></textarea>
           </label>
-          <button class="button full" type="submit" disabled>Өтінімді дайындау</button>
+          <button class="button full" type="submit" disabled>WhatsApp-қа өтінім дайындау</button>
           <noscript class="full"><p class="form-hint">Өтінім мәтінін дайындау үшін JavaScript қосыңыз.</p></noscript>
           <div class="form-result full" id="quote-result" hidden>
             <p class="result-status" id="quote-status" role="status"></p>
@@ -205,7 +315,7 @@
             <textarea id="quote-message" rows="5" readonly></textarea>
             <div class="result-actions">
               <button class="button button-outline" id="quote-copy" type="button">Көшіру</button>
-              <button class="button" id="quote-share" type="button" hidden>Бөлісу</button>
+              <a class="button" id="quote-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp ашу</a>
             </div>
           </div>
         </form>
@@ -215,10 +325,11 @@
   <footer class="foot">
     <div class="wrap">
       <a class="logo" href="#top" aria-label="Adal Cleaning — беттің басына"><img src="assets/logo.png" alt="" decoding="async"></a>
-      <span>Клининг компаниясы</span>
+      <span>Астана және Алматы</span>
       <nav aria-label="Беттің төменгі бөлігі">
         <a href="#services">Қызметтер</a>
-        <a href="#contact">Өтінім қалдыру</a>
+        <a href="#prices">Бағалар</a>
+        <a href="#contact">Филиалдар</a>
       </nav>
     </div>
   </footer>
