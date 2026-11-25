@@ -90,3 +90,8 @@
   .price-details dl div { gap: 8px; font-size: .91rem; }
   .contact .branch { padding: 10px; }
 }
+
+.adal_cleaning .card img[src$="service-renovation.webp"] { object-position: 50% 17%; }
+.adal_cleaning .card img[src$="service-wet.webp"] { object-position: 50% 88%; }
+.adal_cleaning .card img[src$="service-move.webp"] { object-position: 50% 56%; }
+.adal_cleaning .card img[src$="service-upholstery.webp"] { object-position: 50% 63%; }

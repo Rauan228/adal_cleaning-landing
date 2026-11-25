@@ -587,7 +587,7 @@ h3 {
 .adal_cleaning .card { grid-column: span 2; }
 .adal_cleaning .card:nth-child(-n+2) { grid-column: span 3; }
 .adal_cleaning .card img { height: clamp(157px, 15vw, 204px); }
-.adal_cleaning .card:nth-child(-n+2) img { height: clamp(188px, 19vw, 255px); }
+.adal_cleaning .card:nth-child(-n+2) img { height: clamp(188px, 21vw, 300px); }
 .adal_cleaning .secondary .photobox { object-position: 54% 64%; border-radius: 50% 50% 12px 12px / 47% 47% 12px 12px; }
 
 @media (min-width: 1001px) {
